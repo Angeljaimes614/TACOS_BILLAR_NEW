@@ -44,21 +44,27 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
+    const isProd = process.env.NODE_ENV === "production";
     return [
       {
         source: "/:path*",
         headers: securityHeaders,
       },
-      {
-        // Cache largo para los assets estáticos de Next.
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      // En dev, Next gestiona su propio Cache-Control para /_next/static y
+      // sobreescribirlo rompe HMR + dispara un warning. Solo lo aplicamos en prod.
+      ...(isProd
+        ? [
+            {
+              source: "/_next/static/:path*",
+              headers: [
+                {
+                  key: "Cache-Control",
+                  value: "public, max-age=31536000, immutable",
+                },
+              ],
+            },
+          ]
+        : []),
       {
         // El sitemap se actualiza con los productos.
         source: "/sitemap.xml",
