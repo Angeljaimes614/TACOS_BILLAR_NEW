@@ -1,0 +1,63 @@
+{
+  "name": "maestro-billar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tienda premium de tacos de billar y accesorios — Next.js 15 + TypeScript + Tailwind CSS + Framer Motion",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,md}\"",
+    "sanity:dev": "sanity dev",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy",
+    "sanity:typegen": "sanity schema extract && sanity typegen generate",
+    "sanity:seed": "sanity dataset import sanity/seed.ndjson production --replace"
+  },
+  "dependencies": {
+    "next": "15.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "next-themes": "^0.4.4",
+    "framer-motion": "^11.18.0",
+    "lucide-react": "^0.469.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0",
+    "class-variance-authority": "^0.7.1",
+    "zustand": "^5.0.3",
+    "mercadopago": "^2.0.15",
+    "zod": "^3.24.1",
+    "react-hook-form": "^7.54.2",
+    "@hookform/resolvers": "^3.10.0",
+    "sonner": "^1.7.1",
+    "sanity": "^3.74.0",
+    "next-sanity": "^9.8.31",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.74.0",
+    "@sanity/icons": "^3.5.7",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.5.1",
+    "autoprefixer": "^10.4.20",
+    "tailwindcss-animate": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.16",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "15.1.6",
+    "@eslint/eslintrc": "^3.2.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

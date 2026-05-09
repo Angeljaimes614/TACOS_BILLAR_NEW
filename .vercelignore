@@ -1,0 +1,9 @@
+.env*
+!.env.example
+.next/
+node_modules/
+sanity/seed.ndjson
+README.md
+.vscode/
+.idea/
+*.log

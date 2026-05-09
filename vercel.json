@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "github": {
+    "silent": true
+  },
+  "functions": {
+    "src/app/api/checkout/preference/route.ts": {
+      "maxDuration": 15
+    },
+    "src/app/api/checkout/webhook/route.ts": {
+      "maxDuration": 15
+    },
+    "src/app/api/revalidate/route.ts": {
+      "maxDuration": 10
+    }
+  },
+  "redirects": [
+    {
+      "source": "/admin/(panel)",
+      "destination": "/admin",
+      "permanent": false
+    }
+  ]
+}
